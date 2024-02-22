@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Month Days Calculator</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body style="background-color: lightblue;">
+    
+    <h2>Month Days Calculator</h2>
+    <button onclick="calculateDays()" style="background-color:darkcyan;border-radius: 2px;border: none;padding-top: 5px;padding-bottom: 5px;color: white;">Calculate</button>
+    <div id="result"></div>
+    <script>
+        let calculateDays=()=> {
+            var monthName = prompt("Enter the name of the month (like Jan, Feb):").toLowerCase();
+            var days;
+            switch (monthName) {
+                case "jan":
+                case "mar":
+                case "may":
+                case "jul":
+                case "aug":
+                case "oct":
+                case "dec":
+                    days = 31;
+                    break;
+                case "apr":
+                case "jun":
+                case "sep":
+                case "nov":
+                    days = 30;
+                    break;
+                case "feb":
+                    days = "28 or 29";
+                    break;
+                default:
+                    days = "Invalid month";
+            }
+            var result = document.getElementById("result");
+            result.innerHTML = "Total number of days in " + monthName.toUpperCase() + ": <span class='red'>" + days + "</span>";
+        }
+    </script>
+</body>
+</html>
