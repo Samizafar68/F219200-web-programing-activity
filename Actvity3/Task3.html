@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            border:1px solid black;
+            height: 100%;
+            
+            
+        }
+        label{
+            color: goldenrod;
+            margin-top: 20px;
+            font-weight: bolder;
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <form action="form" style="display: grid;align-items: center;justify-content: center;margin-top: 200px;">
+        <label for="">First Number:</label>
+        <input type="text" id="text1">
+        <label for="">Second Number:</label>
+        <input type="text" id="text2">
+        <button type="button" onclick="func()" style="margin-top: 25px;width: 40%;margin-left: 50px;height: 80%;background-color:goldenrod;color:black;border-radius: 200px;border: none;font-weight: bold;cursor: pointer;">Result</button>
+    
+    </form>
+    <script>
+        let func=()=> {
+            var firstnumber = parseFloat(document.getElementById("text1").value); // Parsing input values as floats
+            var secondnumber = parseFloat(document.getElementById("text2").value);
+
+
+            var add = firstnumber + secondnumber;
+            var sub = firstnumber - secondnumber;
+            var mul = firstnumber * secondnumber;
+            var divide;
+
+
+            if (secondnumber !== 0) { // Check if divisor is not zero
+                divide = firstnumber / secondnumber;
+            } else {
+                divide = "Division By Zero is Not Possible.!"; // Handle division by zero
+            }
+
+
+            // Display results
+            document.body.innerHTML += `<br>
+                <label for="" style="margin-left:750px;">Result After Addition: ${add}</label><br>
+                <label for=""style="margin-left:750px;">Result After Multiplication: ${mul}</label><br>
+                <label for=""style="margin-left:750px;">Result After Subtraction: ${sub}</label><br>
+                <label for=""style="margin-left:750px;">Result After Division: ${divide}</label><br>
+            `;
+        }
+    </script>
+</body>
+</html>
