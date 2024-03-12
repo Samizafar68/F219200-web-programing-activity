@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div id="id1">click</div>
+    <div class="class2">click</div>
+    <div class="class3">click</div>
+    <script>
+        $(document).ready(function(){
+            $("div").click(function(){
+                let id=$(this).attr("id");
+                let clss=$(this).attr("class");
+                alert("id: " + id + "\nClass: " +clss);
+            })
+        })
+    </script>
+</body>
+</html>
